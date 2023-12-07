@@ -6,6 +6,7 @@ A method that determines if all the boxes can be opened
 
 from collections import deque
 
+
 def canUnlockAll(boxes):
     """
     Checking all visited boxes
