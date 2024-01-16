@@ -1,6 +1,6 @@
 ## :file_folder: Starwars_API
 
-This project covers the Star Wars API. That is writing a script that prints all characters of a Star Wars movie.
+This project covers the Star Wars API. That is, writing a script that prints all characters of a Star Wars movie.
 
 ## To Install Node 10
 Use:
