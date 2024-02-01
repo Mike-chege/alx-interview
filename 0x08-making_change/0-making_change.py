@@ -13,19 +13,15 @@ def makeChange(coins, total):
     Coins is a list of the values of the coins in your possession
     The value of a coin will always be an integer greater than 0
     """
-    if total <= 0:
+    temp_value = 0
+    coins.sort(reverse=True)
+
+    if total < 0:
         return 0
-    if len(coins) is 0:
-        return -1
-    coins = sorted(coins)
-    dynamic = [float('inf')] * (total + 1)
-    dynamic[0] = 0
-    for i in range(total + 1):
-        for coin in coins:
-            if coin > i:
-                break
-            if dynamic[i - coin] != -1:
-                dynamic[i] = min(dynamic[i - coin] + 1, dynamic[i])
-    if dynamic[total] == float('inf'):
-        return -1
-    return dynamic[total]
+
+    for coin in coins:
+        if total % coin <= total:
+            temp_value += total // coin
+            total = total % coin
+
+    return temp_value if total == 0 else -1
